@@ -47,8 +47,8 @@ class Apps::Chatwoot < ApplicationRecord
     dashboard_apps_response = Faraday.post(
       "#{chatwoot_endpoint_url}/api/v1/accounts/#{chatwoot_account_id}/dashboard_apps",
       {
-        "title": 'WoofedCRM',
-        "content": [{ "type": 'frame', "url": woofedcrm_embedding_url }]
+        "title": 'KrauffCRM',
+        "content": [{ "type": 'frame', "url": krauffcrm_embedding_url }]
       }.to_json,
       { 'api_access_token': chatwoot_user_token.to_s, 'Content-Type': 'application/json' }
     )
@@ -57,7 +57,7 @@ class Apps::Chatwoot < ApplicationRecord
       "#{chatwoot_endpoint_url}/api/v1/accounts/#{chatwoot_account_id}/webhooks",
       {
         "webhook": {
-          "url": woofedcrm_webhooks_url,
+          "url": krauffcrm_webhooks_url,
           "subscriptions": %w[
             contact_created
             contact_updated
@@ -110,11 +110,11 @@ class Apps::Chatwoot < ApplicationRecord
 
   private
 
-  def woofedcrm_webhooks_url
+  def krauffcrm_webhooks_url
     "#{ENV['FRONTEND_URL']}/apps/chatwoots/webhooks?token=#{embedding_token}"
   end
 
-  def woofedcrm_embedding_url
+  def krauffcrm_embedding_url
     "#{ENV['FRONTEND_URL']}/apps/chatwoots/embedding?token=#{embedding_token}"
   end
 

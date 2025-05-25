@@ -1,11 +1,11 @@
 {
   "instance": {
-    "instanceName": "Woofed EvolutionApi test",
+    "instanceName": "Krauff EvolutionApi test",
     "instanceId": "f9618261-c32b-462f-a1ed-0f6b6e334df5",
     "status": "created"
   },
   "hash": {
-    "apikey": "woofedtoken"
+    "apikey": "Kraufftoken"
   },
   "webhook": {},
   "websocket": {},

@@ -15,7 +15,7 @@
 FactoryBot.define do
   factory :account do
     name { 'Account Testing' }
-    site_url { 'https://woofedcrm.com' }
+    site_url { 'https://krauffcrm.com' }
 
     before(:create) do |account, options|
       unless options.methods.include?(:run_embed_company_site) && options.run_embed_company_site

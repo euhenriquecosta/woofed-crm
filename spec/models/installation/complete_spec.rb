@@ -23,7 +23,7 @@ RSpec.describe Installation do
       context 'when there is an account registered' do
         let!(:account) { create(:account) }
         before do
-          stub_request(:post, 'https://store.woofedcrm.com/installations/complete')
+          stub_request(:post, 'https://store.krauffcrm.com/installations/complete')
             .to_return(body: { message: 'Installation completed' }.to_json, status: 200, headers: { 'Content-Type' => 'application/json' })
         end
         it 'should return true and update installation status to completed' do
@@ -55,7 +55,7 @@ RSpec.describe Installation do
     let!(:user) { create(:user) }
     context 'when valid registration' do
       before do
-        stub_request(:post, 'https://store.woofedcrm.com/installations/complete')
+        stub_request(:post, 'https://store.krauffcrm.com/installations/complete')
           .to_return(body: { message: 'Installation completed' }.to_json, status: 200, headers: { 'Content-Type' => 'application/json' })
       end
 
@@ -67,7 +67,7 @@ RSpec.describe Installation do
     context 'when invalid registration' do
       context 'invalid token' do
         before do
-          stub_request(:post, 'https://store.woofedcrm.com/installations/complete')
+          stub_request(:post, 'https://store.krauffcrm.com/installations/complete')
             .to_return(body: { errors: 'Unauthorized' }.to_json, status: 401, headers: { 'Content-Type' => 'application/json' })
         end
 
@@ -77,7 +77,7 @@ RSpec.describe Installation do
 
         context 'invalid params' do
           before do
-            stub_request(:post, 'https://store.woofedcrm.com/installations/complete')
+            stub_request(:post, 'https://store.krauffcrm.com/installations/complete')
               .to_return(body: { errors: 'Invalid params' }.to_json, status: 422, headers: { 'Content-Type' => 'application/json' })
           end
 

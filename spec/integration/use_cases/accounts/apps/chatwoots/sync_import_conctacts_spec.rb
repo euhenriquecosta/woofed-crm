@@ -64,7 +64,7 @@ RSpec.describe Accounts::Apps::Chatwoots::SyncImportContacts, type: :request do
           expect(contact.reload.additional_attributes.key?('chatwoot_id')).to eq(true)
         end
       end
-      context 'if contact exist in woofed but not in chatwoot' do
+      context 'if contact exist in krauff but not in chatwoot' do
         let!(:contact) { create(:contact, account: account) }
         let(:no_chatwoot_id_contacts) { account.contacts.where("additional_attributes ->> 'chatwoot_id' IS NULL") }
         it 'should ignore contact' do
@@ -84,12 +84,12 @@ RSpec.describe Accounts::Apps::Chatwoots::SyncImportContacts, type: :request do
                                                                                 { 'chatwoot_id' => 338,
                                                                                   'chatwoot_identifier' => nil }])
         end
-        context 'if contact already exists in woofed' do
+        context 'if contact already exists in Krauff' do
           let!(:contact) do
             create(:contact, account: account, email: 'bbbb@eamil.com', full_name: 'BBBBBBBBBBBBBBBBBBBBB',
                              label_list: %w[marcador1 marcador2 marcador3])
           end
-          it 'should replace woofed tags to chatwoot tags' do
+          it 'should replace Krauff tags to chatwoot tags' do
             expect(account.contacts.first.label_list).to match_array(%w[marcador1 marcador2 marcador3])
             Accounts::Apps::Chatwoots::SyncImportContacts.new(chatwoot).call
             expect(account.contacts.count).to eq(2)
@@ -97,12 +97,12 @@ RSpec.describe Accounts::Apps::Chatwoots::SyncImportContacts, type: :request do
             expect(account.contacts.first.chatwoot_conversations_label_list).to eq(['test1'])
             expect(account.contacts.map { |c| c.additional_attributes['chatwoot_id'] }).to include(63, 338)
           end
-          context 'if there is no tag on chatwoot contact but there is tag on woofed contact' do
+          context 'if there is no tag on chatwoot contact but there is tag on Krauff contact' do
             before do
               stub_request(:get, /labels/)
                 .to_return(body: { payload: [] }.to_json, status: 200, headers: { 'Content-Type' => 'application/json' })
             end
-            it 'should replace woofed contact tags from chatwoot contact tags ' do
+            it 'should replace Krauff contact tags from chatwoot contact tags ' do
               expect(account.contacts.first.label_list).to match_array(%w[marcador1 marcador2 marcador3])
               Accounts::Apps::Chatwoots::SyncImportContacts.new(chatwoot).call
               expect(account.contacts.count).to eq(2)

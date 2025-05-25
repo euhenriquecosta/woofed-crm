@@ -46,7 +46,7 @@ RSpec.describe Accounts::Apps::Chatwoots::Webhooks::Events::Message, type: :requ
         to_return(body: {"payload": ["testc"]}.to_json, status: 200, headers: {'Content-Type' => 'application/json'})
         stub_request(:get, /conversations/).
         to_return(body: response_conversations, status: 200, headers: {'Content-Type' => 'application/json'})
-        stub_request(:any, /chatwoot\.server3\.woofedcrm\.com/).
+        stub_request(:any, /chatwoot\.server3\.krauffcrm\.com/).
         to_return(body: 'file data')
       end
       context 'when receive event with one attachment' do
@@ -78,7 +78,7 @@ RSpec.describe Accounts::Apps::Chatwoots::Webhooks::Events::Message, type: :requ
         let(:event_message_with_one_attachment) { File. read("spec/integration/use_cases/accounts/apps/chatwoots/webhooks/events/message/event_message_with_one_attachment.json") }
 
         it 'should crete one event with one attachment' do
-          stub_request(:any, /chatwoot\.server3\.woofedcrm\.com/).
+          stub_request(:any, /chatwoot\.server3\.krauffcrm\.com/).
           to_return(status: 404)
 
           expect do

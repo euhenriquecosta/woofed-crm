@@ -21,7 +21,7 @@ RSpec.describe Devise::SessionsController, type: :request do
         password_confirmation: '123456',
         phone: '+5522998813788',
         account_attributes: {
-          name: 'woofed'
+          name: 'krauff'
         }
       }
     }

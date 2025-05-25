@@ -10,7 +10,7 @@
 #
 FactoryBot.define do
   factory :webhook do
-    url { 'https://woofedcrm.com' }
+    url { 'https://krauffcrm.com' }
     status { 'active' }
   end
 end

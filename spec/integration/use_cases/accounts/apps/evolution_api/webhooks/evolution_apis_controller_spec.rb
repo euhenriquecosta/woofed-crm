@@ -56,7 +56,7 @@ RSpec.describe Apps::EvolutionApisController, type: :request do
         "owner": evolution_api.instance,
         "source": 'ios'
       },
-      "destination": 'https://webhookwoofed.site',
+      "destination": 'https://webhookkrauff.site',
       "date_time": '2024-02-08T01:58:05.737Z',
       "sender": "#{evolution_api.phone.sub(/\+/, '')}@s.whatsapp.net",
       "server_url": evolution_api.endpoint_url,
@@ -99,7 +99,7 @@ RSpec.describe Apps::EvolutionApisController, type: :request do
         "owner": evolution_api.instance,
         "source": 'android'
       },
-      "destination": 'https://webhookwoofed.site/',
+      "destination": 'https://webhookkrauff.site/',
       "date_time": '2024-02-07T18:04:36.189Z',
       "sender": "#{evolution_api.phone.sub(/\+/, '')}@s.whatsapp.net",
       "server_url": evolution_api.endpoint_url,
@@ -119,7 +119,7 @@ RSpec.describe Apps::EvolutionApisController, type: :request do
       "destination": 'https://webhook.com/',
       "date_time": '2024-01-27T01:19:47.979Z',
       "sender": '5522999999999@s.whatsapp.net',
-      "server_url": 'https://app-beta.woofedcrm.com/',
+      "server_url": 'https://app-beta.krauffcrm.com/',
       "apikey": evolution_api.token
     }
   end

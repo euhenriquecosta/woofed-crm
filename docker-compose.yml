@@ -4,7 +4,7 @@ services:
   postgres:              
     image: pgvector/pgvector:pg16                                                                                                                                                                      
     volumes:                                                                                                                                                                                   
-      - woofed-crm-pg-volume:/var/lib/postgresql/data                                                                                                                                               
+      - krauff-crm-pg-volume:/var/lib/postgresql/data                                                                                                                                               
     environment:                                                                                                                                                                                  
       POSTGRES_PASSWORD: password                                                                                                                                                                            
     ports:                                                                                                                                                                                     
@@ -15,5 +15,5 @@ services:
       - '6379:6379'
 
 volumes:
-  woofed-crm-pg-volume:
+  krauff-crm-pg-volume:
       external: false

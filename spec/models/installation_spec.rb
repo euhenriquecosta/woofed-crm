@@ -32,17 +32,17 @@ RSpec.describe Installation do
   end
   describe '#installation_url' do
     it do
-      expect(Installation.installation_url).to eq('https://store.woofedcrm.com/installations/new?installation_params={"url":"http://www.example.com","kind":"self_hosted"}')
+      expect(Installation.installation_url).to eq('https://store.krauffcrm.com/installations/new?installation_params={"url":"http://www.example.com","kind":"self_hosted"}')
     end
 
     context 'when FRONTEND_URL is set' do
       before do
         allow(ENV).to receive(:fetch).and_call_original
-        allow(ENV).to receive(:fetch).with('FRONTEND_URL', 'http://localhost:3001').and_return('https://app.woofedcrm.com')
+        allow(ENV).to receive(:fetch).with('FRONTEND_URL', 'http://localhost:3001').and_return('https://app.krauffcrm.com')
       end
 
       it do
-        expect(Installation.installation_url).to eq('https://store.woofedcrm.com/installations/new?installation_params={"url":"https://app.woofedcrm.com","kind":"self_hosted"}')
+        expect(Installation.installation_url).to eq('https://store.krauffcrm.com/installations/new?installation_params={"url":"https://app.krauffcrm.com","kind":"self_hosted"}')
       end
     end
 
@@ -53,7 +53,7 @@ RSpec.describe Installation do
       end
 
       it do
-        expect(Installation.installation_url).to eq('https://store.woofedcrm.com/installations/new?installation_params={"url":"http://localhost:3001","kind":"self_hosted"}')
+        expect(Installation.installation_url).to eq('https://store.krauffcrm.com/installations/new?installation_params={"url":"http://localhost:3001","kind":"self_hosted"}')
       end
     end
   end

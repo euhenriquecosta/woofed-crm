@@ -36,7 +36,7 @@ class Apps::EvolutionApi < ApplicationRecord
     { 'apiKey': token.to_s, 'Content-Type': 'application/json' }
   end
 
-  def woofedcrm_webhooks_url
+  def krauffcrm_webhooks_url
     "#{ENV['FRONTEND_URL']}/apps/evolution_apis/webhooks"
   end
 

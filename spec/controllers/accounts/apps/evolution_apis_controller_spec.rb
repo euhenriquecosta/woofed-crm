@@ -8,7 +8,7 @@ RSpec.describe Accounts::Apps::EvolutionApisController, type: :request do
   let(:app_evolution_api_created) { Apps::EvolutionApi.first }
   let(:valid_params) do
     { apps_evolution_api: {
-      name: 'woofed whatsapp'
+      name: 'Krauff WhatsApp'
     } }
   end
   let(:invalid_params) do

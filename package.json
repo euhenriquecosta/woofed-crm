@@ -1,5 +1,5 @@
 {
-  "name": "woofed-crm",
+  "name": "krauff-crm",
   "private": true,
   "scripts": {
     "build": "yarn install",

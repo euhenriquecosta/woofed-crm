@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.config.session_store :cookie_store,
-                                       key: "_woofedcrm_#{Rails.env}_session",
+                                       key: "_krauffcrm_#{Rails.env}_session",
                                        domain: :all,
                                        same_site: :none,
                                        secure: true,

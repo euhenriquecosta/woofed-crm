@@ -3,7 +3,7 @@ es:
     accounts:
       settings:
         index:
-          integrate_with_other_apps: "Integre Woofed con otras aplicaciones de su empresa"
+          integrate_with_other_apps: "Integre Krauff con otras aplicaciones de su empresa"
           whatsapp: "WhatsApp"
           whatsapp_configuration: "Configure su conexión con Whatsapp"
           chatwoot: "Chatwoot"

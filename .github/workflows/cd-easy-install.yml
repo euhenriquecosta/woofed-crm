@@ -24,7 +24,7 @@ jobs:
 
       - name: Set docker tag
         run: |
-          echo "DOCKER_TAG=${{ secrets.DOCKERHUB_USERNAME }}/woofedcrm:easy-install-$GIT_REF-$GIT_HASH" >> $GITHUB_ENV
+          echo "DOCKER_TAG=${{ secrets.DOCKERHUB_USERNAME }}/krauffcrm:easy-install-$GIT_REF-$GIT_HASH" >> $GITHUB_ENV
 
       - name: Login to DockerHub
         uses: docker/login-action@v1
@@ -39,4 +39,4 @@ jobs:
           file: docker/easy-install/Dockerfile
           platforms: linux/amd64
           push: true
-          tags: ${{ env.DOCKER_TAG }},${{ secrets.DOCKERHUB_USERNAME }}/woofedcrm:easy-install-latest
+          tags: ${{ env.DOCKER_TAG }},${{ secrets.DOCKERHUB_USERNAME }}/Krauffcrm:easy-install-latest

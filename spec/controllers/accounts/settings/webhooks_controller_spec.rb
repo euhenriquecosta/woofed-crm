@@ -82,7 +82,7 @@ RSpec.describe Accounts::Settings::WebhooksController, type: :request do
       context 'get webhooks' do
         it do
           get "/accounts/#{account.id}/webhooks"
-          expect(response.body).to include('https://woofedcrm.com')
+          expect(response.body).to include('https://krauffcrm.com')
           expect(response).to have_http_status(200)
         end
       end
@@ -116,7 +116,7 @@ RSpec.describe Accounts::Settings::WebhooksController, type: :request do
 
             patch "/accounts/#{account.id}/webhooks/#{webhook.id}",
                   params: invalid_params
-            expect(webhook.reload.url).to eq('https://woofedcrm.com')
+            expect(webhook.reload.url).to eq('https://krauffcrm.com')
             expect(response.body).to match(/URL can&#39;t be blank/)
             expect(response).to have_http_status(:unprocessable_entity)
           end

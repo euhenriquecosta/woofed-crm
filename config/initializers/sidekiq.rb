@@ -34,7 +34,7 @@ Sidekiq.configure_server do |config|
 end
 
 Sidekiq::Web.use(Rack::Auth::Basic) do |user, password|
-  [user, password] == [ENV.fetch('MOTOR_AUTH_USERNAME') { 'lovewoofed' }, ENV.fetch('MOTOR_AUTH_PASSWORD') do
-                                                                            'lovewoofed'
+  [user, password] == [ENV.fetch('MOTOR_AUTH_USERNAME') { 'lovekrauff' }, ENV.fetch('MOTOR_AUTH_PASSWORD') do
+                                                                            'lovekrauff'
                                                                           end]
 end

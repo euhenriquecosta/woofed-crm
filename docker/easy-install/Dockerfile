@@ -2,15 +2,15 @@ FROM ruby:3.3.4
 
 ENV POSTGRES_USER=postgres
 ENV POSTGRES_PASSWORD=password
-ENV POSTGRES_DB=woofed_crm_production
-ENV DATABASE_URL=postgres://postgres:password@localhost/woofed_crm_production
+ENV POSTGRES_DB=krauff_crm_production
+ENV DATABASE_URL=postgres://postgres:password@localhost/krauff_crm_production
 ENV RAILS_ENV production
 ENV RAILS_SERVE_STATIC_FILES true
 ENV RAILS_LOG_TO_STDOUT true
 ENV SECRET_KEY_BASE dummy_secret_key_base
 ENV REDIS_URL=redis://localhost:6379/0
-ENV MOTOR_AUTH_USERNAME=lovewoofed
-ENV MOTOR_AUTH_PASSWORD=lovewoofed
+ENV MOTOR_AUTH_USERNAME=lovekrauff
+ENV MOTOR_AUTH_PASSWORD=lovekrauff
 ENV PORT=3001
 ENV ENABLE_USER_SIGNUP=false
 ENV FRONTEND_URL=http://0.0.0.0:3001
